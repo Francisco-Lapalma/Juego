@@ -7,6 +7,12 @@ public class PlayerController : MonoBehaviour
     private CharacterController ccPlayer;
     [SerializeField] private float speedPlayer = 3f;
     [SerializeField] private float playerGravity = 5f;
+    private float maxPlayerHealth = 100;
+    private float maxPlayerThirst = 100;
+    private float maxPlayerHunger = 100;
+    [SerializeField] private float currentHealth;
+    [SerializeField] private float currentThirst;
+    [SerializeField] private float currentHunguer;
 
     private void Awake()
     {
@@ -34,22 +40,22 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            MovementPlayer(Vector3.forward);
+            MovementPlayer(Vector3.forward.normalized);
         }
         
         if (Input.GetKey(KeyCode.S))
         {
-            MovementPlayer(Vector3.back);
+            MovementPlayer(Vector3.back.normalized);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            MovementPlayer(Vector3.left);
+            MovementPlayer(Vector3.left.normalized);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            MovementPlayer(Vector3.right);
+            MovementPlayer(Vector3.right.normalized);
         }
     }
 
