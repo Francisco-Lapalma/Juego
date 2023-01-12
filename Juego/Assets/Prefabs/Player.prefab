@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 575550408016588651}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,6 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedPlayer: 3
   playerGravity: 5
+  areaToGrabItem: {fileID: 0}
 --- !u!1001 &9209973045867136287
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -7,12 +7,7 @@ public class PlayerController : MonoBehaviour
     private CharacterController ccPlayer;
     [SerializeField] private float speedPlayer = 3f;
     [SerializeField] private float playerGravity = 5f;
-    private float maxPlayerHealth = 100;
-    private float maxPlayerThirst = 100;
-    private float maxPlayerHunger = 100;
-    [SerializeField] private float currentHealth;
-    [SerializeField] private float currentThirst;
-    [SerializeField] private float currentHunguer;
+    private bool isAbleToGrab = false;
 
     private void Awake()
     {
@@ -63,4 +58,21 @@ public class PlayerController : MonoBehaviour
     {
         ccPlayer.Move(Vector3.down * playerGravity * Time.deltaTime);
     }
+
+    private void GrabItem()
+    {
+        if (isAbleToGrab == true)
+        {
+            
+        }
+    }
+
+    private void OnTriggerStay(Collider other) {
+        if (other.gameObject.CompareTag("AreaGrab"))
+        {
+            isAbleToGrab = true;
+            Debug.Log("Se puede agarrar");
+        }
+    }
+
 }
