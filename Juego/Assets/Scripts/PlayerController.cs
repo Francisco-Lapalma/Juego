@@ -59,20 +59,4 @@ public class PlayerController : MonoBehaviour
         ccPlayer.Move(Vector3.down * playerGravity * Time.deltaTime);
     }
 
-    private void GrabItem()
-    {
-        if (isAbleToGrab == true)
-        {
-            
-        }
-    }
-
-    private void OnTriggerStay(Collider other) {
-        if (other.gameObject.CompareTag("AreaGrab"))
-        {
-            isAbleToGrab = true;
-            Debug.Log("Se puede agarrar");
-        }
-    }
-
 }
